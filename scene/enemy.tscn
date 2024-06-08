@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmj05n7htg18w"]
+
+[ext_resource type="Texture2D" uid="uid://8atr7krsfqs1" path="res://icon.svg" id="1_48ndm"]
+[ext_resource type="Script" path="res://scene/enemy.gd" id="1_vngtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqrs8"]
+size = Vector2(38, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51qnr"]
+size = Vector2(40, 40)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_vngtd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.296875, 0.296875)
+texture = ExtResource("1_48ndm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wqrs8")
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("RectangleShape2D_51qnr")
+debug_color = Color(0.995079, 0, 0.211465, 0.42)

@@ -1,17 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgvcjve7h81oa"]
+[gd_scene load_steps=5 format=3 uid="uid://bgvcjve7h81oa"]
 
 [ext_resource type="PackedScene" uid="uid://cbmqov5rcbo5s" path="res://scene/player.tscn" id="1_fxwdp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dwtp"]
-size = Vector2(1753.5, 22)
+[ext_resource type="Script" path="res://script/main.gd" id="1_udshm"]
+[ext_resource type="PackedScene" uid="uid://dccifw1oxw4i6" path="res://scene/floor.tscn" id="2_cpby6"]
+[ext_resource type="PackedScene" uid="uid://cmj05n7htg18w" path="res://scene/enemy.tscn" id="4_qfjd5"]
 
 [node name="main" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(585, 646)
-shape = SubResource("RectangleShape2D_4dwtp")
+script = ExtResource("1_udshm")
 
 [node name="player" parent="." instance=ExtResource("1_fxwdp")]
-position = Vector2(216, 52)
+position = Vector2(569, 45)
+
+[node name="fps" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+metadata/_edit_use_anchors_ = true
+
+[node name="floor" parent="." instance=ExtResource("2_cpby6")]
+position = Vector2(573, 360)
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource("4_qfjd5")]
+position = Vector2(1433, 10)
+
+[node name="enemy3" parent="enemies" instance=ExtResource("4_qfjd5")]
+position = Vector2(-180, 71)
+
+[node name="enemy4" parent="enemies" instance=ExtResource("4_qfjd5")]
+position = Vector2(-200, 559)
+
+[node name="enemy5" parent="enemies" instance=ExtResource("4_qfjd5")]
+position = Vector2(192, 773)
+
+[node name="enemy2" parent="enemies" instance=ExtResource("4_qfjd5")]
+position = Vector2(1411, 794)
