@@ -73,16 +73,21 @@ position = Vector2(573, 360)
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy" parent="enemies" instance=ExtResource("4_qfjd5")]
-position = Vector2(1433, 10)
+position = Vector2(995, 134)
 
 [node name="enemy3" parent="enemies" instance=ExtResource("4_qfjd5")]
-position = Vector2(-180, 71)
+position = Vector2(78, 253)
 
 [node name="enemy4" parent="enemies" instance=ExtResource("4_qfjd5")]
-position = Vector2(-200, 559)
+position = Vector2(90, 495)
 
 [node name="enemy5" parent="enemies" instance=ExtResource("4_qfjd5")]
-position = Vector2(192, 773)
+position = Vector2(256, 591)
 
 [node name="enemy2" parent="enemies" instance=ExtResource("4_qfjd5")]
-position = Vector2(1411, 794)
+position = Vector2(981, 510)
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
