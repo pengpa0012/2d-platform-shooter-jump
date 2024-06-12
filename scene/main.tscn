@@ -9,7 +9,7 @@
 script = ExtResource("1_udshm")
 
 [node name="player" parent="." instance=ExtResource("1_fxwdp")]
-position = Vector2(569, 45)
+position = Vector2(564, 209)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

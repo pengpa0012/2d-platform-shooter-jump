@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func _on_enemy_spawn_timer_timeout():
 	for n in Global.ENEMIES_LEFT:
 		var enemy = enemy_scene.instantiate() as CharacterBody2D
-		enemy.position.x = player.position.x + 50
-		enemy.position.y = player.position.y + 50
+		enemy.global_position.x = randi_range(0, get_viewport_rect().size.x)
+		enemy.global_position.y = randi_range(0, get_viewport_rect().size.y)
 		enemy.set_script(enemy_script)
 		enemyList.add_child(enemy)
